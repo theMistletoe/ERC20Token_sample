@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract DevLOVEToken is ERC20, Ownable {
     constructor() ERC20("DevLOVEToken", "DVL") {
-        _mint(msg.sender, 100000000000000);
+        _mint(msg.sender, 100000000000000000000000000000000);
     }
 
     function mint(uint amount) public onlyOwner {
