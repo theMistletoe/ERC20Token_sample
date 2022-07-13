@@ -19,7 +19,7 @@ describe("DevLOVEToken", function () {
   describe("Deployment", function () {
     it("is set fixed amount", async function () {
       const { devLOVEToken } = await loadFixture(deployFixture);
-      expect(await devLOVEToken.totalSupply()).to.equal(100000000000000);
+      expect(await (await devLOVEToken.totalSupply()).toString()).to.equal("100000000000000000000000000000000");
       expect(await devLOVEToken.name()).to.equal("DevLOVEToken");
       expect(await devLOVEToken.symbol()).to.equal("DVL");
     });
@@ -30,7 +30,7 @@ describe("DevLOVEToken", function () {
       const { devLOVEToken } = await loadFixture(deployFixture);
       const tx = await devLOVEToken.mint(100);
       await tx.wait();
-      expect(await devLOVEToken.totalSupply()).to.equal(100000000000100);
+      expect(await (await devLOVEToken.totalSupply()).toString()).to.equal("100000000000000000000000000000100");
     });
   });
 });
